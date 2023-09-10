@@ -19,7 +19,7 @@ groups=('switch-portlibs')
 
 build() {
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   make -C "$srcdir/bzip2-$pkgver" \
   CC=${TOOL_PREFIX}gcc \
@@ -31,7 +31,7 @@ build() {
 }
 
 package() {
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   install -Dm 644 "$srcdir/bzip2-$pkgver"/LICENSE -t "${pkgdir}/${PORTLIBS_PREFIX}/licenses/${pkgname}"
   install -Dm 644 "$srcdir/bzip2-$pkgver"/bzlib.h -t "${pkgdir}/${PORTLIBS_PREFIX}/include/"

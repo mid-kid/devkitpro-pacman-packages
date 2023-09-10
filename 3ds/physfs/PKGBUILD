@@ -24,7 +24,7 @@ build() {
   source ${DEVKITPRO}/3dsvars.sh
 
   arm-none-eabi-cmake  -G"Unix Makefiles" \
-    -DCMAKE_INSTALL_PREFIX=/opt/devkitpro/portlibs/3ds \
+    -DCMAKE_INSTALL_PREFIX="$DEVKITPRO"/portlibs/3ds \
     -DPHYSFS_BUILD_STATIC=ON -DPHYSFS_BUILD_SHARED=OFF \
     -DPHYSFS_BUILD_TEST=OFF \
     .

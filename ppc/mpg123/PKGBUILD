@@ -21,7 +21,7 @@ groups=('ppc-portlibs')
 build() {
   cd mpg123-$pkgver
 
-  source /opt/devkitpro/ppcvars.sh
+  source "$DEVKITPRO"/ppcvars.sh
 
   patch -Np1 -i "$srcdir"/mpg123-${pkgver}.patch
 
@@ -38,7 +38,7 @@ build() {
 package() {
   cd mpg123-$pkgver
 
-  source /opt/devkitpro/devkitppc.sh
+  source "$DEVKITPRO"/devkitppc.sh
 
   make DESTDIR="$pkgdir" install
 

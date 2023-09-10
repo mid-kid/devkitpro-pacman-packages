@@ -25,7 +25,7 @@ sha256sums=(
 build() {
   cd SDL_ttf-$pkgver
 
-  source /opt/devkitpro/cubevars.sh
+  source "$DEVKITPRO"/cubevars.sh
 
   sed '/^noinst_PROGRAMS/d' -i Makefile.in
   ./configure --prefix="${PORTLIBS_PREFIX}" --host=powerpc-eabi \
@@ -36,7 +36,7 @@ build() {
 package() {
   cd SDL_ttf-$pkgver
 
-  source /opt/devkitpro/cubevars.sh
+  source "$DEVKITPRO"/cubevars.sh
 
   make DESTDIR="$pkgdir" install
 

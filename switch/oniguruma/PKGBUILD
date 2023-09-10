@@ -17,7 +17,7 @@ sha256sums=('db7addb196ecb34e9f38d8f9c97b29a3e962c0e17ea9636127b3e3c42f24976a')
 build() {
   cd onig-$pkgver
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   ./configure --prefix="${PORTLIBS_PREFIX}" --host=aarch64-none-elf \
     --disable-shared --enable-static 

@@ -19,9 +19,9 @@ sha256sums=('f71682d3d6f6aa8ab54c7ec6ee2a5cfc0e5a7cca9724ae7ee55097ee69b6fbc9'
 
 package() {
 
-  install -d "$pkgdir"/opt/devkitpro/devkitA64/bin
-  cp "$srcdir"/aarch64-none-elf-cmake "$pkgdir"/opt/devkitpro/devkitA64/bin/
-  install -d "$pkgdir"/opt/devkitpro/cmake
-  cp "${srcdir}"/devkitA64.cmake "$pkgdir"/opt/devkitpro/cmake
+  install -d "$pkgdir$DEVKITPRO"/devkitA64/bin
+  cp "$srcdir"/aarch64-none-elf-cmake "$pkgdir$DEVKITPRO"/devkitA64/bin/
+  install -d "$pkgdir$DEVKITPRO"/cmake
+  cp "${srcdir}"/devkitA64.cmake "$pkgdir$DEVKITPRO"/cmake
 
 }

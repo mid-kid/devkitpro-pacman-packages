@@ -15,7 +15,7 @@ groups=("ppc-portlibs")
 
 package() {
 
-  source /opt/devkitpro/ppcvars.sh
+  source "$DEVKITPRO"/ppcvars.sh
 
   cd lz4-${pkgver}/lib
 

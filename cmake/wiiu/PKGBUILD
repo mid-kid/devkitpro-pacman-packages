@@ -22,11 +22,11 @@ sha256sums=(
 
 package() {
 
-  install -d "$pkgdir"/opt/devkitpro/portlibs/wiiu/bin
-  cp "$srcdir"/powerpc-eabi-cmake "$pkgdir"/opt/devkitpro/portlibs/wiiu/bin/
-  install -d "$pkgdir"/opt/devkitpro/cmake
-  cp "${srcdir}"/WiiU.cmake "$pkgdir"/opt/devkitpro/cmake
-  install -d "$pkgdir"/opt/devkitpro/cmake/Platform
-  cp "${srcdir}"/CafeOS.cmake "$pkgdir"/opt/devkitpro/cmake/Platform
+  install -d "$pkgdir$DEVKITPRO"/portlibs/wiiu/bin
+  cp "$srcdir"/powerpc-eabi-cmake "$pkgdir$DEVKITPRO"/portlibs/wiiu/bin/
+  install -d "$pkgdir$DEVKITPRO"/cmake
+  cp "${srcdir}"/WiiU.cmake "$pkgdir$DEVKITPRO"/cmake
+  install -d "$pkgdir$DEVKITPRO"/cmake/Platform
+  cp "${srcdir}"/CafeOS.cmake "$pkgdir$DEVKITPRO"/cmake/Platform
 
 }

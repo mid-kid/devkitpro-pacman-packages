@@ -18,7 +18,7 @@ groups=('ppc-portlibs')
 
 build() {
 
-  source /opt/devkitpro/ppcvars.sh
+  source "$DEVKITPRO"/ppcvars.sh
 
   make -C "$srcdir/bzip2-$pkgver" \
   CC=${TOOL_PREFIX}gcc \
@@ -30,7 +30,7 @@ build() {
 }
 
 package() {
-  source /opt/devkitpro/ppcvars.sh
+  source "$DEVKITPRO"/ppcvars.sh
 
   install -Dm 644 "$srcdir/bzip2-$pkgver"/LICENSE -t "${pkgdir}/${PORTLIBS_PREFIX}/licenses/${pkgname}"
   install -Dm 644 "$srcdir/bzip2-$pkgver"/bzlib.h -t "${pkgdir}/${PORTLIBS_PREFIX}/include/"

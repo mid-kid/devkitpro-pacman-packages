@@ -24,7 +24,7 @@ build() {
 
   patch -Np1 -i ${srcdir}/libjpeg-turbo-${pkgver}.patch
 
-  source /opt/devkitpro/ppcvars.sh
+  source "$DEVKITPRO"/ppcvars.sh
 
   powerpc-eabi-cmake -DENABLE_SHARED:BOOLEAN=false -DWITH_TURBOJPEG_TESTS:BOOLEAN=false -DCMAKE_INSTALL_PREFIX=$PORTLIBS_PREFIX .
 
@@ -34,7 +34,7 @@ build() {
 package() {
   cd libjpeg-turbo-$pkgver
 
-  source /opt/devkitpro/ppcvars.sh
+  source "$DEVKITPRO"/ppcvars.sh
 
   make DESTDIR="$pkgdir" install
   # license

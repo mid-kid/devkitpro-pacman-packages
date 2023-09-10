@@ -16,9 +16,9 @@ groups=('switch-portlibs')
 build() {
   cd tinyxml2-$pkgver
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
-  cmake -DCMAKE_TOOLCHAIN_FILE=/opt/devkitpro/switch.cmake \
+  cmake -DCMAKE_TOOLCHAIN_FILE="$DEVKITPRO"/cmake/Switch.cmake \
     -DCMAKE_INSTALL_PREFIX=$PORTLIBS_PREFIX \
     -DCMAKE_C_FLAGS="$CFLAGS $CPPFLAGS" \
     -DCMAKE_CXX_FLAGS="$CFLAGS" \
@@ -34,7 +34,7 @@ package() {
 
   cd tinyxml2-$pkgver
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   make install DESTDIR="$pkgdir"
 

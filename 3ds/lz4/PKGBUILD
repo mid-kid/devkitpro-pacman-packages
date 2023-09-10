@@ -15,7 +15,7 @@ groups=("3ds-portlibs")
 
 package() {
 
-  source /opt/devkitpro/3dsvars.sh
+  source "$DEVKITPRO"/3dsvars.sh
 
   cd lz4-${pkgver}/lib
 

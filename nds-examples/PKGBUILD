@@ -16,6 +16,6 @@ makedepends=('devkitARM')
 groups=('nds-dev')
 
 package() {
-  mkdir -p "$pkgdir"/opt/devkitpro/examples/nds
-  cp -R $srcdir/${pkgname}-${pkgver}/* "$pkgdir"/opt/devkitpro/examples/nds
+  mkdir -p "$pkgdir$DEVKITPRO"/examples/nds
+  cp -R $srcdir/${pkgname}-${pkgver}/* "$pkgdir$DEVKITPRO"/examples/nds
 }

@@ -24,7 +24,7 @@ build() {
 
   patch -Np1 -i "$srcdir/libmad-0.15.1b.patch"
 
-  source /opt/devkitpro/armv4tvars.sh
+  source "$DEVKITPRO"/armv4tvars.sh
 
   ./configure --prefix="${PORTLIBS_PREFIX}" --host=arm-none-eabi --disable-shared --enable-static \
   	      --enable-fpm=arm --enable-speed
@@ -34,8 +34,8 @@ build() {
 package() {
   cd libmad-$pkgver
 
-  source /opt/devkitpro/devkitarm.sh
-  source /opt/devkitpro/armv4tvars.sh
+  source "$DEVKITPRO"/devkitarm.sh
+  source "$DEVKITPRO"/armv4tvars.sh
 
   make DESTDIR="$pkgdir" install
 }

@@ -19,7 +19,7 @@ build() {
   cd libiconv-$pkgver
   patch -p0 -i ${srcdir}/libiconv-${pkgver}.patch
 
-  source /opt/devkitpro/3dsvars.sh
+  source "$DEVKITPRO"/3dsvars.sh
 
   ./configure --prefix=$PORTLIBS_PREFIX --host=arm-none-eabi --disable-shared \
   CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" LIBS="${LIBS}"
@@ -30,7 +30,7 @@ build() {
 package() {
   cd libiconv-$pkgver
 
-  source /opt/devkitpro/3dsvars.sh
+  source "$DEVKITPRO"/3dsvars.sh
 
   make install-lib includedir=${pkgdir}/${PORTLIBS_PREFIX}/include libdir=${pkgdir}/${PORTLIBS_PREFIX}/lib
 }

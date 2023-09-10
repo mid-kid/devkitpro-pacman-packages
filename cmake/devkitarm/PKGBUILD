@@ -26,12 +26,12 @@ sha256sums=('f1029f9a04b2e543e5b49255fe501839dabe7f80e626dca0196531de744704db'
 
 package() {
 
-  install -d "$pkgdir"/opt/devkitpro/devkitARM/bin
-  cp "$srcdir"/arm-none-eabi-cmake "$pkgdir"/opt/devkitpro/devkitARM/bin/
-  install -d "$pkgdir"/opt/devkitpro/cmake
-  cp "${srcdir}"/devkitARM.cmake "$pkgdir"/opt/devkitpro/cmake
-  cp "${srcdir}"/dkp-arm-mode-wrapper "$pkgdir"/opt/devkitpro/cmake
-  cp "${srcdir}"/dkp-gba-ds-common.cmake "$pkgdir"/opt/devkitpro/cmake
-  cp "${srcdir}"/dkp-gba-ds-utils.cmake "$pkgdir"/opt/devkitpro/cmake
+  install -d "$pkgdir$DEVKITPRO"/devkitARM/bin
+  cp "$srcdir"/arm-none-eabi-cmake "$pkgdir$DEVKITPRO"/devkitARM/bin/
+  install -d "$pkgdir$DEVKITPRO"/cmake
+  cp "${srcdir}"/devkitARM.cmake "$pkgdir$DEVKITPRO"/cmake
+  cp "${srcdir}"/dkp-arm-mode-wrapper "$pkgdir$DEVKITPRO"/cmake
+  cp "${srcdir}"/dkp-gba-ds-common.cmake "$pkgdir$DEVKITPRO"/cmake
+  cp "${srcdir}"/dkp-gba-ds-utils.cmake "$pkgdir$DEVKITPRO"/cmake
 
 }

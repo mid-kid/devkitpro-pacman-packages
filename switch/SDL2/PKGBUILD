@@ -16,7 +16,7 @@ groups=('switch-portlibs' 'switch-sdl2')
 build() {
   cd SDL2-$pkgver
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   patch -p1 -i $srcdir/SDL2-${pkgver}.patch
 
@@ -37,7 +37,7 @@ build() {
 package() {
   cd SDL2-$pkgver
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   make DESTDIR="$pkgdir" install
 

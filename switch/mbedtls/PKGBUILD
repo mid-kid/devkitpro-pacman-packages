@@ -25,7 +25,7 @@ build() {
 
   ./scripts/config.pl unset MBEDTLS_SELF_TEST
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   aarch64-none-elf-cmake \
     -DCMAKE_INSTALL_PREFIX=$PORTLIBS_PREFIX \
@@ -43,7 +43,7 @@ package() {
 
   cd mbedtls-$pkgver
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   make install DESTDIR="$pkgdir"
 

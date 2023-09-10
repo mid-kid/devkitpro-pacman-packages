@@ -20,7 +20,7 @@ groups=('switch-portlibs')
 build() {
   cd libxml2-$pkgver
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   export LIBS=-lnx
   export CFLAGS="${CFLAGS} -D__LINUX_ERRNO_EXTENSIONS__"

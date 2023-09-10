@@ -17,7 +17,7 @@ groups=('3ds-portlibs')
 build() {
   cd opusfile-$pkgver
 
-  source /opt/devkitpro/3dsvars.sh
+  source "$DEVKITPRO"/3dsvars.sh
 
   ./configure --prefix="${PORTLIBS_PREFIX}" --host=arm-none-eabi \
     --disable-shared --enable-static
@@ -28,7 +28,7 @@ build() {
 package() {
   cd opusfile-$pkgver
 
-  source /opt/devkitpro/3dsvars.sh
+  source "$DEVKITPRO"/3dsvars.sh
 
   make DESTDIR="$pkgdir" install
 }

@@ -22,11 +22,11 @@ sha256sums=(
 
 package() {
 
-  install -d "$pkgdir"/opt/devkitpro/portlibs/nds/bin
-  cp "$srcdir"/arm-none-eabi-cmake "$pkgdir"/opt/devkitpro/portlibs/nds/bin/
-  install -d "$pkgdir"/opt/devkitpro/cmake
-  cp "${srcdir}"/NDS.cmake "$pkgdir"/opt/devkitpro/cmake
-  install -d "$pkgdir"/opt/devkitpro/cmake/Platform
-  cp "${srcdir}"/NintendoDS.cmake "$pkgdir"/opt/devkitpro/cmake/Platform
+  install -d "$pkgdir$DEVKITPRO"/portlibs/nds/bin
+  cp "$srcdir"/arm-none-eabi-cmake "$pkgdir$DEVKITPRO"/portlibs/nds/bin/
+  install -d "$pkgdir$DEVKITPRO"/cmake
+  cp "${srcdir}"/NDS.cmake "$pkgdir$DEVKITPRO"/cmake
+  install -d "$pkgdir$DEVKITPRO"/cmake/Platform
+  cp "${srcdir}"/NintendoDS.cmake "$pkgdir$DEVKITPRO"/cmake/Platform
 
 }

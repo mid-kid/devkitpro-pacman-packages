@@ -15,7 +15,7 @@ groups=('nds-portlibs')
 build() {
   cd zlib-$pkgver
 
-  source /opt/devkitpro/ndsvars.sh
+  source "$DEVKITPRO"/ndsvars.sh
 
   CHOST=arm-none-eabi \
     ./configure --prefix="${PORTLIBS_PREFIX}" --static
@@ -34,7 +34,7 @@ build() {
 package() {
   cd zlib-$pkgver
 
-  source /opt/devkitpro/ndsvars.sh
+  source "$DEVKITPRO"/ndsvars.sh
 
   make DESTDIR="$pkgdir" install
   # license

@@ -21,13 +21,13 @@ groups=('3ds-portlibs')
 build() {
   cd libsidplay-$pkgver
   patch -p0 -i ../libsidplay-${pkgver}.patch
-  source /opt/devkitpro/3dsvars.sh
+  source "$DEVKITPRO"/3dsvars.sh
   ./configure --prefix="${PORTLIBS_PREFIX}" --host=arm-none-eabi --disable-shared --enable-static
   make
 }
 
 package() {
   cd libsidplay-$pkgver
-  source /opt/devkitpro/3dsvars.sh
+  source "$DEVKITPRO"/3dsvars.sh
   make DESTDIR="$pkgdir" install
 }

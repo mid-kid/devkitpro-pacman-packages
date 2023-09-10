@@ -16,7 +16,7 @@ groups=('switch-portlibs')
 build() {
   cd ode-$pkgver
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   # Demos depend on GL and X11, disable since they are not useful to us.
   ./configure --prefix="${PORTLIBS_PREFIX}" --host=aarch64-none-elf \
@@ -28,7 +28,7 @@ package() {
 
   cd ode-$pkgver
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   make install DESTDIR="$pkgdir"
 

@@ -16,6 +16,6 @@ makedepends=('devkitA64')
 groups=('switch-dev')
 
 package() {
-  mkdir -p $pkgdir/opt/devkitpro/examples/switch
-  cp -R $srcdir/$pkgname-$pkgver/* $pkgdir/opt/devkitpro/examples/switch  
+  mkdir -p $pkgdir"$DEVKITPRO"/examples/switch
+  cp -R $srcdir/$pkgname-$pkgver/* $pkgdir"$DEVKITPRO"/examples/switch
 }

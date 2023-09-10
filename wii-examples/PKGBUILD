@@ -16,6 +16,6 @@ depends=('devkitPPC' 'libogc')
 groups=('wii-dev')
 
 package() {
-  mkdir -p "$pkgdir"/opt/devkitpro/examples/wii
-  cp -R $srcdir/${pkgname}-${pkgver}/* "$pkgdir"/opt/devkitpro/examples/wii  
+  mkdir -p "$pkgdir$DEVKITPRO"/examples/wii
+  cp -R $srcdir/${pkgname}-${pkgver}/* "$pkgdir$DEVKITPRO"/examples/wii
 }

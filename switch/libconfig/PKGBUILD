@@ -19,7 +19,7 @@ groups=('switch-portlibs')
 build() {
   cd libconfig-$pkgver
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
   
   patch -Np1 -i "$srcdir"/libconfig.patch
 
@@ -33,7 +33,7 @@ build() {
 package() {
   cd libconfig-$pkgver
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   make DESTDIR="$pkgdir" install
   # license

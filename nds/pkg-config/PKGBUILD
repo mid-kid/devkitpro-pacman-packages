@@ -11,6 +11,6 @@ sha256sums=('020238b87d79f1d5e25ff08df89b9761a14fbe47b1ea2ec8435472d36ce3d3e7')
 groups=('nds-dev')
 
 package() {
-  install -d "$pkgdir"/opt/devkitpro/portlibs/nds/bin
-  cp "$srcdir"/pkg-config.in "$pkgdir"/opt/devkitpro/portlibs/nds/bin/arm-none-eabi-pkg-config
+  install -d "$pkgdir$DEVKITPRO"/portlibs/nds/bin
+  cp "$srcdir"/pkg-config.in "$pkgdir$DEVKITPRO"/portlibs/nds/bin/arm-none-eabi-pkg-config
 }

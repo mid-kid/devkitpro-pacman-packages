@@ -16,7 +16,7 @@ groups=('switch-portlibs')
 build() {
   cd miniupnpc-$pkgver
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
   export CC=aarch64-none-elf-gcc
   export CXX=aarch64-none-elf-g++
   export LD=aarch64-none-elf-gcc
@@ -31,7 +31,7 @@ build() {
 package() {
   cd miniupnpc-$pkgver
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
-  make PREFIX=/opt/devkitpro/portlibs/switch DESTDIR="$pkgdir" install
+  make PREFIX="$DEVKITPRO"/portlibs/switch DESTDIR="$pkgdir" install
 }

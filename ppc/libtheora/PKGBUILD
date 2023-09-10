@@ -21,7 +21,7 @@ groups=('ppc-portlibs')
 build() {
   cd libtheora-$pkgver
 
-  source /opt/devkitpro/ppcvars.sh
+  source "$DEVKITPRO"/ppcvars.sh
 
   cp $srcdir/config.sub $srcdir/config.guess .
 
@@ -35,7 +35,7 @@ build() {
 package() {
   cd libtheora-$pkgver
 
-  source /opt/devkitpro/ppcvars.sh
+  source "$DEVKITPRO"/ppcvars.sh
 
   make DESTDIR="$pkgdir" install
 

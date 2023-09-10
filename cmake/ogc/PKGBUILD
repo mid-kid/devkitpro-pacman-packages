@@ -20,9 +20,9 @@ sha256sums=(
 )
 
 package() {
-  install -d "$pkgdir"/opt/devkitpro/cmake
-  cp "${srcdir}"/ogc-common.cmake "$pkgdir"/opt/devkitpro/cmake
-  install -d "$pkgdir"/opt/devkitpro/cmake/Platform
-  cp "${srcdir}"/libogc.cmake "$pkgdir"/opt/devkitpro/cmake/Platform
+  install -d "$pkgdir$DEVKITPRO"/cmake
+  cp "${srcdir}"/ogc-common.cmake "$pkgdir$DEVKITPRO"/cmake
+  install -d "$pkgdir$DEVKITPRO"/cmake/Platform
+  cp "${srcdir}"/libogc.cmake "$pkgdir$DEVKITPRO"/cmake/Platform
 
 }

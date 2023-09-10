@@ -14,6 +14,10 @@ sha256sums=('2247bc8866b56fd29d6dde16a045a838e3c1dc85d3a75a7f27c60fc0e454fb0d')
 makedepends=('devkitARM')
 groups=('gba-dev' 'gp32-dev' 'nds-dev' '3ds-dev')
 
+prepare() {
+  sed -e 's#/opt/devkitpro#$(DEVKITPRO)#g' -i $srcdir/$pkgname-$pkgver/Makefile
+}
+
 build() {
 
   cd $srcdir/$pkgname-$pkgver

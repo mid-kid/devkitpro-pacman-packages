@@ -25,7 +25,7 @@ sha256sums=(
 build() {
   cd SDL_ttf-$pkgver
 
-  source /opt/devkitpro/wiivars.sh
+  source "$DEVKITPRO"/wiivars.sh
 
   sed '/^noinst_PROGRAMS/d' -i Makefile.in
   ./configure --prefix="${PORTLIBS_PREFIX}" --host=powerpc-eabi \
@@ -36,7 +36,7 @@ build() {
 package() {
   cd SDL_ttf-$pkgver
 
-  source /opt/devkitpro/wiivars.sh
+  source "$DEVKITPRO"/wiivars.sh
 
   make DESTDIR="$pkgdir" install
 

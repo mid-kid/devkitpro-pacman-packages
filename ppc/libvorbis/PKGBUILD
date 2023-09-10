@@ -18,7 +18,7 @@ sha256sums=('0e982409a9c3fc82ee06e08205b1355e5c6aa4c36bca58146ef399621b0ce5ab')
 build() {
   cd libvorbis-$pkgver
 
-  source /opt/devkitpro/ppcvars.sh
+  source "$DEVKITPRO"/ppcvars.sh
 
   ./configure --prefix="${PORTLIBS_PREFIX}" --host=powerpc-eabi \
     --disable-shared --enable-static
@@ -28,6 +28,6 @@ build() {
 
 package() {
   cd libvorbis-$pkgver
-  source /opt/devkitpro/ppcvars.sh
+  source "$DEVKITPRO"/ppcvars.sh
   make DESTDIR="$pkgdir" install
 }

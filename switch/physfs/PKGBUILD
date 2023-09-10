@@ -24,7 +24,7 @@ build() {
   source ${DEVKITPRO}/switchvars.sh
 
   aarch64-none-elf-cmake -G"Unix Makefiles" \
-    -DCMAKE_INSTALL_PREFIX=/opt/devkitpro/portlibs/switch \
+    -DCMAKE_INSTALL_PREFIX="$DEVKITPRO"/portlibs/switch \
     -DPHYSFS_BUILD_STATIC=ON -DPHYSFS_BUILD_SHARED=OFF \
     -DPHYSFS_BUILD_TEST=OFF \
     .

@@ -24,7 +24,7 @@ sha256sums=(
 
 package() {
 
-  install -d "$pkgdir"/opt/devkitpro
-  install -Dm755 meson-cross.sh meson-toolchain.sh "$pkgdir"/opt/devkitpro
+  install -d "$pkgdir$DEVKITPRO"
+  install -Dm755 meson-cross.sh meson-toolchain.sh "$pkgdir$DEVKITPRO"
 
 }

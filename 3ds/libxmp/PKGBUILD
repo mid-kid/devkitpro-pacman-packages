@@ -16,7 +16,7 @@ build() {
   cd "libxmp-$pkgver"
   patch -Np1 -i $srcdir/libxmp.patch
 
-  source /opt/devkitpro/3dsvars.sh
+  source "$DEVKITPRO"/3dsvars.sh
   ./configure --prefix="${PORTLIBS_PREFIX}" --host=arm-none-eabi \
               --disable-shared --enable-static
   make
@@ -24,6 +24,6 @@ build() {
  
 package() {
   cd "libxmp-$pkgver"
-  source /opt/devkitpro/3dsvars.sh
+  source "$DEVKITPRO"/3dsvars.sh
   make DESTDIR="$pkgdir/" install
 }

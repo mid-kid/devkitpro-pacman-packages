@@ -20,7 +20,7 @@ sha256sums=(
 build() {
   cd libpng-$pkgver
 
-  source /opt/devkitpro/ndsvars.sh
+  source "$DEVKITPRO"/ndsvars.sh
 
   sed -i 's/^bin_PROGRAMS = .*//' Makefile.in
 
@@ -32,7 +32,7 @@ build() {
 package() {
   cd libpng-$pkgver
 
-  source /opt/devkitpro/ndsvars.sh
+  source "$DEVKITPRO"/ndsvars.sh
 
   make LN_S=cp DESTDIR="$pkgdir" install
   # license

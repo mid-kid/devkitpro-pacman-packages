@@ -19,7 +19,7 @@ build() {
 
   cd mxml-${pkgver}
 
-  source /opt/devkitpro/ppcvars.sh
+  source "$DEVKITPRO"/ppcvars.sh
 
   ./configure --prefix="${PORTLIBS_PREFIX}" --host=powerpc-eabi \
     --disable-shared --enable-static --disable-threads
@@ -28,7 +28,7 @@ build() {
 
 package() {
 
-  source /opt/devkitpro/ppcvars.sh
+  source "$DEVKITPRO"/ppcvars.sh
 
   cd mxml-${pkgver}
 

@@ -29,7 +29,7 @@ prepare() {
 build() {
   cd ffmpeg-$pkgver
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   ./configure --prefix=$PORTLIBS_PREFIX --enable-gpl --disable-shared --enable-static \
     --cross-prefix=aarch64-none-elf- --enable-cross-compile \
@@ -51,7 +51,7 @@ build() {
 package() {
   cd ffmpeg-$pkgver
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   make DESTDIR="$pkgdir" install
 

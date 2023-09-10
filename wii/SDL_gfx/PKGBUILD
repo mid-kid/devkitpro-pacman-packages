@@ -24,7 +24,7 @@ sha256sums=(
 build() {
   cd SDL_gfx-$pkgver
 
-  source /opt/devkitpro/wiivars.sh
+  source "$DEVKITPRO"/wiivars.sh
 
   ./configure --prefix="${PORTLIBS_PREFIX}" --host=powerpc-eabi \
     --disable-shared --enable-static \
@@ -36,7 +36,7 @@ build() {
 package() {
   cd SDL_gfx-$pkgver
 
-  source /opt/devkitpro/wiivars.sh
+  source "$DEVKITPRO"/wiivars.sh
 
   make DESTDIR="$pkgdir" install
 

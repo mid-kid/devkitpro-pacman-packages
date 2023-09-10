@@ -31,7 +31,7 @@ build() {
   ./scripts/config.pl unset MBEDTLS_SELF_TEST
   ./scripts/config.pl unset MBEDTLS_TIMING_C
 
-  source /opt/devkitpro/3dsvars.sh
+  source "$DEVKITPRO"/3dsvars.sh
 
   arm-none-eabi-cmake \
     -DCMAKE_INSTALL_PREFIX=$PORTLIBS_PREFIX \
@@ -49,7 +49,7 @@ package() {
 
   cd mbedtls-$pkgver
 
-  source /opt/devkitpro/3dsvars.sh
+  source "$DEVKITPRO"/3dsvars.sh
 
   make install DESTDIR="$pkgdir"
 

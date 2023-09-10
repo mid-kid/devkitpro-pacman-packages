@@ -26,7 +26,7 @@ build() {
 
   patch -Np1 -i $srcdir/switch-curl.patch
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
   LDFLAGS="-specs=${DEVKITPRO}/libnx/switch.specs ${LDFLAGS}"
 
   ./buildconf
@@ -46,7 +46,7 @@ build() {
 package() {
   cd curl-$pkgver
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   make DESTDIR="$pkgdir" -C lib install
   make DESTDIR="$pkgdir" -C include install

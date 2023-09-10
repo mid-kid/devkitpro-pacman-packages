@@ -22,7 +22,7 @@ groups=("nds-portlibs")
 build() {
   cd freetype-$pkgver
 
-  source /opt/devkitpro/ndsvars.sh
+  source "$DEVKITPRO"/ndsvars.sh
 
   ./configure --prefix="${PORTLIBS_PREFIX}" --host=arm-none-eabi \
     --enable-freetype-config \
@@ -37,7 +37,7 @@ build() {
 package() {
   cd freetype-$pkgver
 
-  source /opt/devkitpro/ndsvars.sh
+  source "$DEVKITPRO"/ndsvars.sh
 
   make DESTDIR="$pkgdir" install
 

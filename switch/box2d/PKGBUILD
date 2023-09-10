@@ -18,7 +18,7 @@ build() {
 
   cd ${pkgbasename}-${pkgver}
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   aarch64-none-elf-cmake \
     -DCMAKE_INSTALL_PREFIX=$PORTLIBS_PREFIX \

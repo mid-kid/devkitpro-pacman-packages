@@ -25,7 +25,7 @@ sha256sums=(
 build() {
   cd flac-$pkgver
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   patch -Np1 -i "$srcdir/flac-${pkgver}.patch"
 

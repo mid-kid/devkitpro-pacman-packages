@@ -16,7 +16,7 @@ groups=('nds-portlibs')
 build() {
   cd expat-$pkgver
 
-  source /opt/devkitpro/ndsvars.sh
+  source "$DEVKITPRO"/ndsvars.sh
 
   ./configure --prefix="${PORTLIBS_PREFIX}" --host=arm-none-eabi \
     --disable-shared --enable-static

@@ -18,6 +18,6 @@ makedepends=('devkitARM' 'orcus')
 groups=('gp2x-dev')
 
 package() {
-  mkdir -p "$pkgdir"/opt/devkitpro/examples/gp2x
-  cp -R $srcdir/${pkgname}-${pkgver}/* "$pkgdir"/opt/devkitpro/examples/gp2x
+  mkdir -p "$pkgdir$DEVKITPRO"/examples/gp2x
+  cp -R $srcdir/${pkgname}-${pkgver}/* "$pkgdir$DEVKITPRO"/examples/gp2x
 }

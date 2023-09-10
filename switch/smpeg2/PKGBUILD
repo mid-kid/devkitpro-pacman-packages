@@ -30,7 +30,7 @@ build() {
 
   ./autogen.sh
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
   
   ./configure --prefix="${PORTLIBS_PREFIX}" \
     --host=aarch64-none-elf \
@@ -45,7 +45,7 @@ build() {
 package() {
   cd smpeg2-$pkgver
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   make DESTDIR="$pkgdir" install
 }

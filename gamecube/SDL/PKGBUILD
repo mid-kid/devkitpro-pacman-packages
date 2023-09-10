@@ -21,7 +21,7 @@ sha256sums=(
 build() {
   cd SDL-$pkgver
 
-  source /opt/devkitpro/cubevars.sh
+  source "$DEVKITPRO"/cubevars.sh
 
   patch -p1 -i $srcdir/SDL-1.2.15.patch
   ./autogen.sh
@@ -34,7 +34,7 @@ build() {
 package() {
   cd SDL-$pkgver
 
-  source /opt/devkitpro/cubevars.sh
+  source "$DEVKITPRO"/cubevars.sh
 
   make DESTDIR="$pkgdir" install
 

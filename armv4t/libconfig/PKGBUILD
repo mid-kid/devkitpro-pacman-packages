@@ -19,7 +19,7 @@ groups=('armv4t-portlibs')
 build() {
   cd libconfig-$pkgver
 
-  source /opt/devkitpro/armv4tvars.sh
+  source "$DEVKITPRO"/armv4tvars.sh
   
   patch -Np1 -i "$srcdir"/libconfig.patch
 
@@ -33,7 +33,7 @@ build() {
 package() {
   cd libconfig-$pkgver
 
-  source /opt/devkitpro/armv4tvars.sh
+  source "$DEVKITPRO"/armv4tvars.sh
 
   make DESTDIR="$pkgdir" install
   # license

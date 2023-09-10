@@ -17,7 +17,7 @@ sha256sums=('b512f3b726d3b37b6dc4c8570e137b9311e7552e8ccbab4d39d47ce5f4177145')
 build() {
   cd xz-${pkgver}
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   ./configure --prefix="${PORTLIBS_PREFIX}" --host=aarch64-none-elf \
     --disable-shared --enable-static
@@ -28,7 +28,7 @@ build() {
 package() {
   cd xz-${pkgver}
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   cd src/liblzma
   make DESTDIR="${pkgdir}" install

@@ -26,7 +26,7 @@ prepare() {
 build() {
   cd ${pkgbasename}-${pkgver}
 
-  /opt/devkitpro/meson-cross.sh switch ../crossfile.txt build -Dc_std=gnu11 -Db_ndebug=true -Denable_asm=true \
+  "$DEVKITPRO"/meson-cross.sh switch ../crossfile.txt build -Dc_std=gnu11 -Db_ndebug=true -Denable_asm=true \
     -Denable_tools=false -Denable_examples=false -Denable_tests=false -Denable_docs=false
   meson compile -C build
 }

@@ -22,11 +22,11 @@ sha256sums=(
 
 package() {
 
-  install -d "$pkgdir"/opt/devkitpro/portlibs/switch/bin
-  cp "$srcdir"/aarch64-none-elf-cmake "$pkgdir"/opt/devkitpro/portlibs/switch/bin/
-  install -d "$pkgdir"/opt/devkitpro/cmake
-  cp "${srcdir}"/Switch.cmake "$pkgdir"/opt/devkitpro/cmake
-  install -d "$pkgdir"/opt/devkitpro/cmake/Platform
-  cp "${srcdir}"/NintendoSwitch.cmake "$pkgdir"/opt/devkitpro/cmake/Platform
+  install -d "$pkgdir$DEVKITPRO"/portlibs/switch/bin
+  cp "$srcdir"/aarch64-none-elf-cmake "$pkgdir$DEVKITPRO"/portlibs/switch/bin/
+  install -d "$pkgdir$DEVKITPRO"/cmake
+  cp "${srcdir}"/Switch.cmake "$pkgdir$DEVKITPRO"/cmake
+  install -d "$pkgdir$DEVKITPRO"/cmake/Platform
+  cp "${srcdir}"/NintendoSwitch.cmake "$pkgdir$DEVKITPRO"/cmake/Platform
 
 }

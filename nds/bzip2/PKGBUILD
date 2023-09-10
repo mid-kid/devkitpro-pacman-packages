@@ -19,7 +19,7 @@ groups=('nds-portlibs')
 
 build() {
 
-  source /opt/devkitpro/ndsvars.sh
+  source "$DEVKITPRO"/ndsvars.sh
 
   make -C "$srcdir/bzip2-$pkgver" \
   CC=arm-none-eabi-gcc \
@@ -31,7 +31,7 @@ build() {
 }
 
 package() {
-  source /opt/devkitpro/ndsvars.sh
+  source "$DEVKITPRO"/ndsvars.sh
 
   install -Dm 644 "$srcdir/bzip2-$pkgver"/LICENSE -t "${pkgdir}/${PORTLIBS_PREFIX}/licenses/${pkgname}"
   install -Dm 644 "$srcdir/bzip2-$pkgver"/bzlib.h -t "${pkgdir}/${PORTLIBS_PREFIX}/include/"
