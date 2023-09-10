@@ -8,3 +8,4 @@ pkg
 *.tar.bz2
 *.tar.zst
 *~
+*.zip
