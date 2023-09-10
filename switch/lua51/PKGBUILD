@@ -18,7 +18,7 @@ groups=('switch-portlibs')
 
 build() {
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   make -C "${srcdir}/lua-${pkgver}" \
     CC=aarch64-none-elf-gcc \
@@ -33,7 +33,7 @@ build() {
 
 package() {
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   cd ${srcdir}/lua-${pkgver}
 

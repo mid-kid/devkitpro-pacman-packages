@@ -19,8 +19,8 @@ groups=('3ds-portlibs')
 build() {
   cd libconfig-$pkgver
 
-  source /opt/devkitpro/devkitarm.sh
-  source /opt/devkitpro/3dsvars.sh
+  source "$DEVKITPRO"/devkitarm.sh
+  source "$DEVKITPRO"/3dsvars.sh
   
   patch -Np1 -i "$srcdir"/libconfig.patch
 
@@ -34,8 +34,8 @@ build() {
 package() {
   cd libconfig-$pkgver
 
-  source /opt/devkitpro/devkitarm.sh
-  source /opt/devkitpro/3dsvars.sh
+  source "$DEVKITPRO"/devkitarm.sh
+  source "$DEVKITPRO"/3dsvars.sh
 
   make DESTDIR="$pkgdir" install
   # license

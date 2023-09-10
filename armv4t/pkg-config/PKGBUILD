@@ -11,6 +11,6 @@ sha256sums=('696a12398d82b5e29c267334aef85346f2f0373697ecd7fde3bd420cbf293540')
 groups=('gp32-dev' 'gba-dev' 'gp2x-dev')
 
 package() {
-  install -d "$pkgdir"/opt/devkitpro/portlibs/armv4t/bin
-  cp "$srcdir"/pkg-config.in "$pkgdir"/opt/devkitpro/portlibs/armv4t/bin/arm-none-eabi-pkg-config
+  install -d "$pkgdir$DEVKITPRO"/portlibs/armv4t/bin
+  cp "$srcdir"/pkg-config.in "$pkgdir$DEVKITPRO"/portlibs/armv4t/bin/arm-none-eabi-pkg-config
 }

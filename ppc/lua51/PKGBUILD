@@ -18,7 +18,7 @@ groups=('wiiu-portlibs')
 
 build() {
 
-  source /opt/devkitpro/ppcvars.sh
+  source "$DEVKITPRO"/ppcvars.sh
 
   make -C "${srcdir}/lua-${pkgver}" \
     CC=powerpc-eabi-gcc \
@@ -33,7 +33,7 @@ build() {
 
 package() {
 
-  source /opt/devkitpro/ppcvars.sh
+  source "$DEVKITPRO"/ppcvars.sh
 
   cd ${srcdir}/lua-${pkgver}
 

@@ -31,7 +31,7 @@ prepare() {
 
 build() {
     cd libmad-$pkgver
-    source /opt/devkitpro/ppcvars.sh
+    source "$DEVKITPRO"/ppcvars.sh
 
     ./configure --prefix="$PORTLIBS_PREFIX" --host=powerpc-eabi --disable-shared
 
@@ -40,7 +40,7 @@ build() {
 
 package() {
     cd libmad-$pkgver
-    source /opt/devkitpro/ppcvars.sh
+    source "$DEVKITPRO"/ppcvars.sh
 
     make DESTDIR="$pkgdir" install
 

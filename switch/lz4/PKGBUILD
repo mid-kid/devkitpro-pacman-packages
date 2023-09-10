@@ -15,7 +15,7 @@ groups=("switch-portlibs")
 
 package() {
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   cd lz4-${pkgver}/lib
 

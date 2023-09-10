@@ -24,7 +24,7 @@ sha256sums=(
 build() {
   cd SDL_gfx-$pkgver
 
-  source /opt/devkitpro/gamecubevars.sh
+  source "$DEVKITPRO"/cubevars.sh
 
   ./configure --prefix="${PORTLIBS_PREFIX}" --host=powerpc-eabi \
     --disable-shared --enable-static \
@@ -36,7 +36,7 @@ build() {
 package() {
   cd SDL_gfx-$pkgver
 
-  source /opt/devkitpro/gamecubevars.sh
+  source "$DEVKITPRO"/cubevars.sh
 
   make DESTDIR="$pkgdir" install
 

@@ -26,7 +26,7 @@ build() {
 
   patch -Np1 -i "$srcdir/libtheora-1.2.0.patch"
 
-  source /opt/devkitpro/armv4tvars.sh
+  source "$DEVKITPRO"/armv4tvars.sh
 
   HAVE_ARM_ASM_EDSP=0 ./configure --prefix="${PORTLIBS_PREFIX}" --host=arm-none-eabi \
     --disable-shared --enable-static --disable-encode \
@@ -39,7 +39,7 @@ build() {
 package() {
   cd libtheora-${pkgver}
 
-  source /opt/devkitpro/armv4tvars.sh
+  source "$DEVKITPRO"/armv4tvars.sh
 
   make DESTDIR="$pkgdir" install
 

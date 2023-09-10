@@ -22,7 +22,7 @@ groups=("armv4t-portlibs")
 build() {
   cd freetype-$pkgver
 
-  source /opt/devkitpro/armv4tvars.sh
+  source "$DEVKITPRO"/armv4tvars.sh
 
   ./configure --prefix="${PORTLIBS_PREFIX}" --host=arm-none-eabi \
     --enable-freetype-config \
@@ -37,7 +37,7 @@ build() {
 package() {
   cd freetype-$pkgver
 
-  source /opt/devkitpro/armv4tvars.sh
+  source "$DEVKITPRO"/armv4tvars.sh
 
   make DESTDIR="$pkgdir" install
 

@@ -11,6 +11,6 @@ sha256sums=('0478950b8d4b6b08c8cd678237d99563b50752bfc8680d0ce797601c6677fe57')
 groups=('3ds-dev')
 
 package() {
-  install -d "$pkgdir"/opt/devkitpro/portlibs/3ds/bin
-  cp "$srcdir"/pkg-config.in "$pkgdir"/opt/devkitpro/portlibs/3ds/bin/arm-none-eabi-pkg-config
+  install -d "$pkgdir$DEVKITPRO"/portlibs/3ds/bin
+  cp "$srcdir"/pkg-config.in "$pkgdir$DEVKITPRO"/portlibs/3ds/bin/arm-none-eabi-pkg-config
 }

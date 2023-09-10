@@ -26,7 +26,7 @@ build() {
 
   patch -Np1 -i ${srcdir}/libjpeg-turbo.patch
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   aarch64-none-elf-cmake -DENABLE_SHARED:BOOLEAN=false -DWITH_TURBOJPEG_TESTS:BOOLEAN=false -DCMAKE_INSTALL_PREFIX=$PORTLIBS_PREFIX .
 
@@ -38,10 +38,10 @@ package() {
   cd libjpeg-turbo-$pkgver
   make DESTDIR="$pkgdir" install
   # license
-  install -d "$pkgdir"/opt/devkitpro/portlibs/switch/licenses/$pkgname
-  cp -v LICENSE.md "$pkgdir"/opt/devkitpro/portlibs/switch/licenses/$pkgname/
+  install -d "$pkgdir$DEVKITPRO"/portlibs/switch/licenses/$pkgname
+  cp -v LICENSE.md "$pkgdir$DEVKITPRO"/portlibs/switch/licenses/$pkgname/
   # remove useless stuff
-  rm -r "$pkgdir"/opt/devkitpro/portlibs/switch/share
-  rm -r "$pkgdir"/opt/devkitpro/portlibs/switch/bin
+  rm -r "$pkgdir$DEVKITPRO"/portlibs/switch/share
+  rm -r "$pkgdir$DEVKITPRO"/portlibs/switch/bin
 
 }

@@ -37,7 +37,7 @@ build() {
 package() {
   cd SDL2_ttf-$pkgver
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   make DESTDIR="$pkgdir" install
 

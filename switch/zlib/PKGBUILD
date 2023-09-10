@@ -16,11 +16,11 @@ makedepends=('dkp-toolchain-vars')
 groups=('switch-portlibs')
 
 build() {
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
   cd zlib-$pkgver
   CFLAGS="-g -O2 -march=armv8-a -mtune=cortex-a57 -mtp=soft -fPIC -ftls-model=local-exec" \
   CHOST=aarch64-none-elf \
-    ./configure --prefix="/opt/devkitpro/portlibs/switch" --static
+    ./configure --prefix="$DEVKITPRO/portlibs/switch" --static
   make libz.a # only build library, no programs
 
   # libminizip
@@ -33,15 +33,15 @@ build() {
 }
 
 package() {
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
   cd zlib-$pkgver
   # zlib
   make DESTDIR="$pkgdir" install
   # license
-  install -d "$pkgdir"/opt/devkitpro/portlibs/switch/licenses/$pkgname
-  tail -n 31 README > "$pkgdir"/opt/devkitpro/portlibs/switch/licenses/$pkgname/LICENSE
+  install -d "$pkgdir$DEVKITPRO"/portlibs/switch/licenses/$pkgname
+  tail -n 31 README > "$pkgdir$DEVKITPRO"/portlibs/switch/licenses/$pkgname/LICENSE
   # remove useless stuff
-  rm -r "$pkgdir"/opt/devkitpro/portlibs/switch/share
+  rm -r "$pkgdir$DEVKITPRO"/portlibs/switch/share
   # libminizip
   cd contrib/minizip
   make DESTDIR="$pkgdir" install

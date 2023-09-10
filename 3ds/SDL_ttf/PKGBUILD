@@ -25,7 +25,7 @@ sha256sums=(
 build() {
   cd SDL_ttf-$pkgver
 
-  source /opt/devkitpro/3dsvars.sh
+  source "$DEVKITPRO"/3dsvars.sh
 
   sed '/^noinst_PROGRAMS/d' -i Makefile.in
   ./configure --prefix="${PORTLIBS_PREFIX}" --host=arm-none-eabi \
@@ -36,7 +36,7 @@ build() {
 package() {
   cd SDL_ttf-$pkgver
 
-  source /opt/devkitpro/3dsvars.sh
+  source "$DEVKITPRO"/3dsvars.sh
 
   make DESTDIR="$pkgdir" install
 

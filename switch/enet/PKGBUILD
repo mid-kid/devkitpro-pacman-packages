@@ -14,7 +14,7 @@ groups=('switch-portlibs')
 build() {
   cd enet-${pkgver}
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   autoreconf -vfi
 
@@ -27,7 +27,7 @@ build() {
 package() {
   cd enet-${pkgver}
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   make DESTDIR="$pkgdir" install
 }

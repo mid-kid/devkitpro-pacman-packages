@@ -22,11 +22,11 @@ sha256sums=(
 
 package() {
 
-  install -d "$pkgdir"/opt/devkitpro/portlibs/gamecube/bin
-  cp "$srcdir"/powerpc-eabi-cmake "$pkgdir"/opt/devkitpro/portlibs/gamecube/bin/
-  install -d "$pkgdir"/opt/devkitpro/cmake
-  cp "${srcdir}"/GameCube.cmake "$pkgdir"/opt/devkitpro/cmake
-  install -d "$pkgdir"/opt/devkitpro/cmake/Platform
-  cp "${srcdir}"/NintendoGameCube.cmake "$pkgdir"/opt/devkitpro/cmake/Platform
+  install -d "$pkgdir$DEVKITPRO"/portlibs/gamecube/bin
+  cp "$srcdir"/powerpc-eabi-cmake "$pkgdir$DEVKITPRO"/portlibs/gamecube/bin/
+  install -d "$pkgdir$DEVKITPRO"/cmake
+  cp "${srcdir}"/GameCube.cmake "$pkgdir$DEVKITPRO"/cmake
+  install -d "$pkgdir$DEVKITPRO"/cmake/Platform
+  cp "${srcdir}"/NintendoGameCube.cmake "$pkgdir$DEVKITPRO"/cmake/Platform
 
 }

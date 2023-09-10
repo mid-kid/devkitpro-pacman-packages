@@ -13,24 +13,24 @@ groups=('ppc-portlibs')
 build() {
   cd zlib-$pkgver
 
-  source /opt/devkitpro/devkitppc.sh
-  source /opt/devkitpro/ppcvars.sh
+  source "$DEVKITPRO"/devkitppc.sh
+  source "$DEVKITPRO"/ppcvars.sh
 
   CHOST=powerpc-eabi \
-    ./configure --prefix="/opt/devkitpro/portlibs/ppc" --static
+    ./configure --prefix="$DEVKITPRO/portlibs/ppc" --static
   make libz.a # only build library, no programs
 }
 
 package() {
   cd zlib-$pkgver
 
-  source /opt/devkitpro/devkitppc.sh
+  source "$DEVKITPRO"/devkitppc.sh
 
   make DESTDIR="$pkgdir" install
   # license
-  install -d "$pkgdir"/opt/devkitpro/portlibs/ppc/licenses/$pkgname
-  tail -n 31 README > "$pkgdir"/opt/devkitpro/portlibs/ppc/licenses/$pkgname/LICENSE
+  install -d "$pkgdir$DEVKITPRO"/portlibs/ppc/licenses/$pkgname
+  tail -n 31 README > "$pkgdir$DEVKITPRO"/portlibs/ppc/licenses/$pkgname/LICENSE
   # remove useless stuff
-  rm -r "$pkgdir"/opt/devkitpro/portlibs/ppc/share
+  rm -r "$pkgdir$DEVKITPRO"/portlibs/ppc/share
 }
 sha256sums=('8a9ba2898e1d0d774eca6ba5b4627a11e5588ba85c8851336eb38de4683050a7')

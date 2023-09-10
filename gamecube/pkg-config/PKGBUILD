@@ -7,10 +7,10 @@ pkgdesc='pkg-config wrapper (for Nintendo Wii homebrew development)'
 arch=('any')
 url='http://devkitpro.org/'
 source=('pkg-config.in')
-sha256sums=('d241fb15ac9f209290cdd44863a217cef13ebdeff1cfe4a146cacfb3e46e260c')
+sha256sums=('274735041135fcc08bbbbd26d73ce471a760f211e8a3ddf6e0f8b200f3adb15a')
 groups=('gamecube-dev')
 
 package() {
-  install -d "$pkgdir"/opt/devkitpro/portlibs/gamecube/bin
-  cp "$srcdir"/pkg-config.in "$pkgdir"/opt/devkitpro/portlibs/gamecube/bin/powerpc-eabi-pkg-config
+  install -d "$pkgdir$DEVKITPRO"/portlibs/gamecube/bin
+  cp "$srcdir"/pkg-config.in "$pkgdir$DEVKITPRO"/portlibs/gamecube/bin/powerpc-eabi-pkg-config
 }

@@ -15,7 +15,7 @@ groups=('armv4t-portlibs')
 build() {
   cd zlib-$pkgver
 
-  source /opt/devkitpro/armv4tvars.sh
+  source "$DEVKITPRO"/armv4tvars.sh
 
   CHOST=arm-none-eabi \
     ./configure --prefix="${PORTLIBS_PREFIX}" --static
@@ -34,7 +34,7 @@ build() {
 package() {
   cd zlib-$pkgver
 
-  source /opt/devkitpro/armv4tvars.sh
+  source "$DEVKITPRO"/armv4tvars.sh
 
   make DESTDIR="$pkgdir" install
   # license

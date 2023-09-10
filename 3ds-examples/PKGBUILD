@@ -15,7 +15,7 @@ makedepends=('devkitARM')
 groups=('3ds-dev')
 
 package() {
-  mkdir -p "$pkgdir"/opt/devkitpro/examples/3ds
-  cp -R $srcdir/${pkgname}-${pkgver}/* "$pkgdir"/opt/devkitpro/examples/3ds  
+  mkdir -p "$pkgdir$DEVKITPRO"/examples/3ds
+  cp -R $srcdir/${pkgname}-${pkgver}/* "$pkgdir$DEVKITPRO"/examples/3ds
 }
 sha256sums=('16dfaca05d3431ca36a792e57c8f01bc6f0183991c345d2074e8e74ad82b207f')

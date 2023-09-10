@@ -29,7 +29,7 @@ build() {
   cd ${pkgbasename}-${pkgver}-rc3
 
   patch -p1 -i ${srcdir}/${pkgname}-${pkgver}-${pkgrel}.patch
-  /opt/devkitpro/meson-cross.sh switch ../crossfile.txt build -Db_ndebug=true
+  "$DEVKITPRO"/meson-cross.sh switch ../crossfile.txt build -Db_ndebug=true
   ninja -C build
 
 }
@@ -39,6 +39,6 @@ package() {
 
   DESTDIR="$pkgdir" ninja -C build install
 
-  install -Dm644 $srcdir/OpenGLConfig.cmake $pkgdir/opt/devkitpro/portlibs/switch/lib/cmake/OpenGL/OpenGLConfig.cmake
+  install -Dm644 $srcdir/OpenGLConfig.cmake $pkgdir"$DEVKITPRO"/portlibs/switch/lib/cmake/OpenGL/OpenGLConfig.cmake
 
 }

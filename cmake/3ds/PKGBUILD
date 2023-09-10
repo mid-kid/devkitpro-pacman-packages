@@ -20,11 +20,11 @@ sha256sums=('b60cadbc5b3f1647d107215309698f862ef0a06b3a8057b729b4cb7ff77e1c45'
 
 package() {
 
-  install -d "$pkgdir"/opt/devkitpro/portlibs/3ds/bin
-  cp "$srcdir"/arm-none-eabi-cmake "$pkgdir"/opt/devkitpro/portlibs/3ds/bin/
-  install -d "$pkgdir"/opt/devkitpro/cmake
-  cp "${srcdir}"/3DS.cmake "$pkgdir"/opt/devkitpro/cmake
-  install -d "$pkgdir"/opt/devkitpro/cmake/Platform
-  cp "${srcdir}"/Nintendo3DS.cmake "$pkgdir"/opt/devkitpro/cmake/Platform
+  install -d "$pkgdir$DEVKITPRO"/portlibs/3ds/bin
+  cp "$srcdir"/arm-none-eabi-cmake "$pkgdir$DEVKITPRO"/portlibs/3ds/bin/
+  install -d "$pkgdir$DEVKITPRO"/cmake
+  cp "${srcdir}"/3DS.cmake "$pkgdir$DEVKITPRO"/cmake
+  install -d "$pkgdir$DEVKITPRO"/cmake/Platform
+  cp "${srcdir}"/Nintendo3DS.cmake "$pkgdir$DEVKITPRO"/cmake/Platform
 
 }

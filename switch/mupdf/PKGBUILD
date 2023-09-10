@@ -32,7 +32,7 @@ build() {
 
   make generate
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   make build=release \
     OS=switch \

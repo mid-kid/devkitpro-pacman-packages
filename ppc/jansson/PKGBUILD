@@ -17,7 +17,7 @@ groups=('ppc-portlibs')
 build() {
   cd jansson-$pkgver
 
-  source /opt/devkitpro/ppcvars.sh
+  source "$DEVKITPRO"/ppcvars.sh
 
   ./configure --prefix="${PORTLIBS_PREFIX}" --host=powerpc-eabi \
     --disable-shared --enable-static
@@ -27,7 +27,7 @@ build() {
 package() {
   cd jansson-$pkgver
 
-  source /opt/devkitpro/ppcvars.sh
+  source "$DEVKITPRO"/ppcvars.sh
 
   make DESTDIR="$pkgdir" install
   # license

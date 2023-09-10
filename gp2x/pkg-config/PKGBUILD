@@ -11,6 +11,6 @@ sha256sums=('11a50121b620ba57e64f453c0c32f632149a9b831e8968058be4a5d14177c527')
 groups=('gp2x-dev')
 
 package() {
-  install -d "$pkgdir"/opt/devkitpro/portlibs/gp2x/bin
-  cp "$srcdir"/pkg-config.in "$pkgdir"/opt/devkitpro/portlibs/gp2x/bin/arm-none-eabi-pkg-config
+  install -d "$pkgdir$DEVKITPRO"/portlibs/gp2x/bin
+  cp "$srcdir"/pkg-config.in "$pkgdir$DEVKITPRO"/portlibs/gp2x/bin/arm-none-eabi-pkg-config
 }

@@ -16,7 +16,7 @@ groups=('switch-portlibs')
 build() {
   cd libvorbisidec-$pkgver
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   ./configure --prefix="${PORTLIBS_PREFIX}" --host=aarch64-none-elf
 
@@ -26,7 +26,7 @@ build() {
 package() {
   cd libvorbisidec-$pkgver
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   make DESTDIR="$pkgdir" install
   # license

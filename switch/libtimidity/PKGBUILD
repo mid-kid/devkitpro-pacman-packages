@@ -17,7 +17,7 @@ groups=('switch-portlibs')
 build() {
   cd libtimidity-${pkgver}
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   ./configure --prefix="${PORTLIBS_PREFIX}" --host=aarch64-none-elf \
     --disable-shared --enable-static --disable-aotest --disable-ao
@@ -27,7 +27,7 @@ build() {
 package() {
   cd libtimidity-${pkgver}
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   make DESTDIR="${pkgdir}" install
 }

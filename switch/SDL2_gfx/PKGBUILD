@@ -27,7 +27,7 @@ build() {
 
   ./autogen.sh
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
   
   ./configure --prefix="${PORTLIBS_PREFIX}" \
     --enable-mmx=no \
@@ -41,7 +41,7 @@ build() {
 package() {
   cd SDL2_gfx-$pkgver
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   make DESTDIR="$pkgdir" install
 

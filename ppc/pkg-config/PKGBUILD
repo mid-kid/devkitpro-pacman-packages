@@ -11,6 +11,6 @@ sha256sums=('e435edc486112e1bdb0c96061760bd8bc62b99b2a3f3ce59d819f39e734f9bd3')
 groups=('ppc-dev' 'gamecube-dev' 'wii-dev' 'wiiu-dev')
 
 package() {
-  install -d "$pkgdir"/opt/devkitpro/portlibs/ppc/bin
-  cp "$srcdir"/pkg-config.in "$pkgdir"/opt/devkitpro/portlibs/ppc/bin/powerpc-eabi-pkg-config
+  install -d "$pkgdir$DEVKITPRO"/portlibs/ppc/bin
+  cp "$srcdir"/pkg-config.in "$pkgdir$DEVKITPRO"/portlibs/ppc/bin/powerpc-eabi-pkg-config
 }

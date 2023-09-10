@@ -20,7 +20,7 @@ groups=('switch-portlibs')
 build() {
   cd libvpx-$pkgver
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   patch -p1 -i $srcdir/libvpx.patch
 

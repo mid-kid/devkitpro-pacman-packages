@@ -11,6 +11,6 @@ sha256sums=('7669a9c9c6b739a63d08d631cb252e91b4180f5644e1ed482bf80d1a6e8570fe')
 groups=('switch-dev')
 
 package() {
-  install -d "$pkgdir"/opt/devkitpro/portlibs/switch/bin
-  cp "$srcdir"/pkg-config.in "$pkgdir"/opt/devkitpro/portlibs/switch/bin/aarch64-none-elf-pkg-config
+  install -d "$pkgdir$DEVKITPRO"/portlibs/switch/bin
+  cp "$srcdir"/pkg-config.in "$pkgdir$DEVKITPRO"/portlibs/switch/bin/aarch64-none-elf-pkg-config
 }

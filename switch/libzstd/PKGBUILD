@@ -14,17 +14,17 @@ makedepends=('dkp-toolchain-vars')
 groups=('switch-portlibs')
 
 build() {
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
   cd zstd-$pkgver/lib
 
   make CC=${TOOL_PREFIX}gcc PREFIX=${PORTLIBS_PREFIX} libzstd.a libzstd.pc
 }
 
 package() {
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
   cd zstd-$pkgver/lib
   make DESTDIR="$pkgdir" PREFIX=${PORTLIBS_PREFIX} install-pc install-static install-includes
-  install -d "$pkgdir"/opt/devkitpro/portlibs/switch/licenses/$pkgname
-  install ../COPYING "$pkgdir"/opt/devkitpro/portlibs/switch/licenses/$pkgname/COPYING
-  install ../LICENSE "$pkgdir"/opt/devkitpro/portlibs/switch/licenses/$pkgname/LICENSE
+  install -d "$pkgdir$DEVKITPRO"/portlibs/switch/licenses/$pkgname
+  install ../COPYING "$pkgdir$DEVKITPRO"/portlibs/switch/licenses/$pkgname/COPYING
+  install ../LICENSE "$pkgdir$DEVKITPRO"/portlibs/switch/licenses/$pkgname/LICENSE
 }

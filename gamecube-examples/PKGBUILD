@@ -16,6 +16,6 @@ depends=('devkitPPC' 'libogc')
 groups=('gamecube-dev')
 
 package() {
-  mkdir -p "$pkgdir"/opt/devkitpro/examples/gamecube
-  cp -R $srcdir/${pkgname}-${pkgver}/* "$pkgdir"/opt/devkitpro/examples/gamecube  
+  mkdir -p "$pkgdir$DEVKITPRO"/examples/gamecube
+  cp -R $srcdir/${pkgname}-${pkgver}/* "$pkgdir$DEVKITPRO"/examples/gamecube
 }

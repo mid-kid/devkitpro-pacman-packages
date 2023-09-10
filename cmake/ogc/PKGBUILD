@@ -18,9 +18,9 @@ sha256sums=('038420bc082efcf0c088a1bc63354f4f13d6b2fb29ee2a8ef5f4f689b495de83'
             '2c8f97667ec4f5acd0fed5d0398a436eac1a397620a30a91d6fef823b7b616ef')
 
 package() {
-  install -d "$pkgdir"/opt/devkitpro/cmake
-  cp "${srcdir}"/ogc-common.cmake "$pkgdir"/opt/devkitpro/cmake
-  install -d "$pkgdir"/opt/devkitpro/cmake/Platform
-  cp "${srcdir}"/libogc.cmake "$pkgdir"/opt/devkitpro/cmake/Platform
+  install -d "$pkgdir$DEVKITPRO"/cmake
+  cp "${srcdir}"/ogc-common.cmake "$pkgdir$DEVKITPRO"/cmake
+  install -d "$pkgdir$DEVKITPRO"/cmake/Platform
+  cp "${srcdir}"/libogc.cmake "$pkgdir$DEVKITPRO"/cmake/Platform
 
 }

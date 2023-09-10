@@ -16,7 +16,7 @@ groups=('armv4t-portlibs')
 build() {
   cd libogg-$pkgver
 
-  source /opt/devkitpro/armv4tvars.sh
+  source "$DEVKITPRO"/armv4tvars.sh
 
   ./configure --prefix="${PORTLIBS_PREFIX}" --host=arm-none-eabi \
     --disable-shared --enable-static
@@ -27,7 +27,7 @@ build() {
 package() {
   cd libogg-$pkgver
 
-  source /opt/devkitpro/armv4tvars.sh
+  source "$DEVKITPRO"/armv4tvars.sh
 
   make DESTDIR="$pkgdir" install
 

@@ -18,7 +18,7 @@ build() {
 
     cd ${pkgbasename}-${pkgver}
 
-    source /opt/devkitpro/3dsvars.sh
+    source "$DEVKITPRO"/3dsvars.sh
 
     arm-none-eabi-cmake \
     -DCMAKE_INSTALL_PREFIX=$PORTLIBS_PREFIX \

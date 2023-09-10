@@ -19,11 +19,11 @@ sha256sums=(
 build() {
   cd wildmidi-wildmidi-$pkgver
 
-  source /opt/devkitpro/3dsvars.sh
+  source "$DEVKITPRO"/3dsvars.sh
 
   patch -p1 -i $srcdir/wildmidi-0.4.3.patch
 
-  cmake . -DCMAKE_TOOLCHAIN_FILE=/opt/devkitpro/3ds.cmake \
+  cmake . -DCMAKE_TOOLCHAIN_FILE="$DEVKITPRO"/cmake/3DS.cmake \
     -DCMAKE_INSTALL_PREFIX=$PORTLIBS_PREFIX \
     -DCMAKE_C_FLAGS="$CFLAGS $CPPFLAGS" \
     -DWANT_PLAYER=OFF -DWANT_STATIC=ON \
@@ -38,7 +38,7 @@ package() {
 
   cd wildmidi-wildmidi-$pkgver
 
-  source /opt/devkitpro/3dsvars.sh
+  source "$DEVKITPRO"/3dsvars.sh
 
   make DESTDIR="$pkgdir" install
 

@@ -13,7 +13,7 @@ sha256sums=('df27ec3ff24671f80b29e6ab1c4971059c14ac3db95406884fc26574631ba8d5')
 makedepends=('dkp-toolchain-vars')
 groups=('3ds-portlibs')
 build() {
-  source /opt/devkitpro/3dsvars.sh
+  source "$DEVKITPRO"/3dsvars.sh
 
   cd giflib-$pkgver
 
@@ -24,7 +24,7 @@ build() {
 package() {
   cd giflib-$pkgver
 
-  source /opt/devkitpro/3dsvars.sh
+  source "$DEVKITPRO"/3dsvars.sh
 
   make DESTDIR="${pkgdir}" install
   # MIT License

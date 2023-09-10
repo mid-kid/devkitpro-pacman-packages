@@ -14,6 +14,10 @@ sha256sums=('2cfa75bee0c3479a080a4174af06fe7d46cf2d5a69ecc168c03bbe96dd374e1f')
 makedepends=('devkitARM')
 groups=('gp2x-dev')
 
+prepare() {
+  sed -e 's#/opt/devkitpro#$(DEVKITPRO)#g' -i $srcdir/$pkgname-$pkgver/Makefile
+}
+
 build() {
 
   cd $srcdir/$pkgname-$pkgver

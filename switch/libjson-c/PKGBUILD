@@ -24,7 +24,7 @@ build() {
 
   patch -p0 -i ${srcdir}/json-c-${pkgver}.patch
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   aarch64-none-elf-cmake \
     -DCMAKE_INSTALL_PREFIX=$PORTLIBS_PREFIX \

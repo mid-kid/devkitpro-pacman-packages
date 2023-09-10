@@ -16,7 +16,7 @@ groups=('ppc-portlibs')
 build() {
   cd ode-$pkgver
 
-  source /opt/devkitpro/ppcvars.sh
+  source "$DEVKITPRO"/ppcvars.sh
 
   # Demos depend on GL and X11, disable since they are not useful to us.
   # Disable threads since there's no pthread support on Wii/GC
@@ -29,7 +29,7 @@ package() {
 
   cd ode-$pkgver
 
-  source /opt/devkitpro/ppcvars.sh
+  source "$DEVKITPRO"/ppcvars.sh
 
   make install DESTDIR="$pkgdir"
 

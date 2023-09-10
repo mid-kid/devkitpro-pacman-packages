@@ -21,7 +21,7 @@ makedepends=('dkp-toolchain-vars' '3ds-pkg-config')
 build() {
   cd mpg123-$pkgver
 
-  source /opt/devkitpro/3dsvars.sh
+  source "$DEVKITPRO"/3dsvars.sh
 
   patch -Np1 -i "$srcdir"/mpg123-${pkgver}.patch
 
@@ -38,7 +38,7 @@ build() {
 package() {
 
 
-  source /opt/devkitpro/3dsvars.sh
+  source "$DEVKITPRO"/3dsvars.sh
 
   cd mpg123-$pkgver
 

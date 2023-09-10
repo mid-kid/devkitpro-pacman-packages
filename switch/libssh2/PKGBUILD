@@ -23,7 +23,7 @@ prepare() {
 build() {
   cd "libssh2-${pkgver}"
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   ./configure --prefix=${PORTLIBS_PREFIX} \
 	--disable-shared --enable-static \
@@ -38,8 +38,8 @@ build() {
 package() {
   cd "libssh2-${pkgver}"
 
-  source /opt/devkitpro/switchvars.sh
+  source "$DEVKITPRO"/switchvars.sh
 
   make DESTDIR="${pkgdir}" install
-  install -Dm644 COPYING "${pkgdir}/opt/devkitpro/portlibs/switch/licenses/${pkgname}/LICENSE"
+  install -Dm644 COPYING "${pkgdir}$DEVKITPRO/portlibs/switch/licenses/${pkgname}/LICENSE"
 }

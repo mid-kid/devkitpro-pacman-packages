@@ -16,7 +16,7 @@ groups=('gamecube-dev' 'wii-dev' 'wiiu-dev')
 
 package() {
 
-  mkdir -p $pkgdir/opt/devkitpro/devkitPPC
+  mkdir -p $pkgdir"$DEVKITPRO"/devkitPPC
   make -C ${pkgname}-${pkgver} DESTDIR=$pkgdir install
 
 }

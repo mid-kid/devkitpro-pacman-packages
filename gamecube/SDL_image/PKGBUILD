@@ -30,7 +30,7 @@ build() {
 
   sed -i 's,showimage\$(EXEEXT),,g' Makefile.in
 
-  source /opt/devkitpro/cubevars.sh
+  source "$DEVKITPRO"/cubevars.sh
 
   ./configure --prefix="${PORTLIBS_PREFIX}" --host=powerpc-eabi \
     --disable-shared --enable-static
@@ -40,7 +40,7 @@ build() {
 package() {
   cd SDL_image-$pkgver
 
-  source /opt/devkitpro/cubevars.sh
+  source "$DEVKITPRO"/cubevars.sh
 
   make DESTDIR="$pkgdir" install
 

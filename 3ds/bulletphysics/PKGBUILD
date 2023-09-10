@@ -19,7 +19,7 @@ groups=('3ds-portlibs')
 build() {
   cd bullet3-$pkgver
 
-  source /opt/devkitpro/3dsvars.sh
+  source "$DEVKITPRO"/3dsvars.sh
 
   patch -Np1 -i "$srcdir"/bulletphysics.patch
 
@@ -37,7 +37,7 @@ build() {
 package() {
   cd bullet3-$pkgver
 
-  source /opt/devkitpro/3dsvars.sh
+  source "$DEVKITPRO"/3dsvars.sh
 
   make install DESTDIR="$pkgdir"
 

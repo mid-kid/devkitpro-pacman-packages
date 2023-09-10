@@ -28,15 +28,15 @@ sha256sums=('758b8cc680112d87870f84e8d69abfadc0cbcd1b0987e88329d1fafa7470f9f4'
             '267dbce68e315e78dba3f334c3efbfe0383d104ab0c4e30d9d0cf0d4556bcfe6')
 
 package() {
-  install -d "$pkgdir"/opt/devkitpro/cmake
-  cp "$srcdir"/dkp-initialize-path.cmake "$pkgdir"/opt/devkitpro/cmake
-  cp "$srcdir"/dkp-toolchain-common.cmake "$pkgdir"/opt/devkitpro/cmake
-  cp "$srcdir"/dkp-impl-helpers.cmake "$pkgdir"/opt/devkitpro/cmake
-  cp "$srcdir"/dkp-rule-overrides.cmake "$pkgdir"/opt/devkitpro/cmake
-  cp "$srcdir"/dkp-linker-utils.cmake "$pkgdir"/opt/devkitpro/cmake
-  cp "$srcdir"/dkp-custom-target.cmake "$pkgdir"/opt/devkitpro/cmake
-  cp "$srcdir"/dkp-embedded-binary.cmake "$pkgdir"/opt/devkitpro/cmake
-  cp "$srcdir"/dkp-asset-folder.cmake "$pkgdir"/opt/devkitpro/cmake
-  install -d "$pkgdir"/opt/devkitpro/cmake/Platform
-  cp "$srcdir"/Generic-dkP.cmake "$pkgdir"/opt/devkitpro/cmake/Platform
+  install -d "$pkgdir$DEVKITPRO"/cmake
+  cp "$srcdir"/dkp-initialize-path.cmake "$pkgdir$DEVKITPRO"/cmake
+  cp "$srcdir"/dkp-toolchain-common.cmake "$pkgdir$DEVKITPRO"/cmake
+  cp "$srcdir"/dkp-impl-helpers.cmake "$pkgdir$DEVKITPRO"/cmake
+  cp "$srcdir"/dkp-rule-overrides.cmake "$pkgdir$DEVKITPRO"/cmake
+  cp "$srcdir"/dkp-linker-utils.cmake "$pkgdir$DEVKITPRO"/cmake
+  cp "$srcdir"/dkp-custom-target.cmake "$pkgdir$DEVKITPRO"/cmake
+  cp "$srcdir"/dkp-embedded-binary.cmake "$pkgdir$DEVKITPRO"/cmake
+  cp "$srcdir"/dkp-asset-folder.cmake "$pkgdir$DEVKITPRO"/cmake
+  install -d "$pkgdir$DEVKITPRO"/cmake/Platform
+  cp "$srcdir"/Generic-dkP.cmake "$pkgdir$DEVKITPRO"/cmake/Platform
 }

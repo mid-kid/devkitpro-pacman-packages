@@ -23,7 +23,7 @@ groups=('3ds-portlibs')
 build() {
   cd curl-$pkgver
 
-  source /opt/devkitpro/3dsvars.sh
+  source "$DEVKITPRO"/3dsvars.sh
 
   patch -Np1 -i $srcdir/curl-${pkgver}.patch
 
@@ -48,7 +48,7 @@ build() {
 package() {
   cd curl-$pkgver
 
-  source /opt/devkitpro/3dsvars.sh
+  source "$DEVKITPRO"/3dsvars.sh
 
   make DESTDIR="$pkgdir" -C lib install
   make DESTDIR="$pkgdir" -C include install

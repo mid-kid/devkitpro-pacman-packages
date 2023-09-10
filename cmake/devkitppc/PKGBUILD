@@ -18,8 +18,8 @@ sha256sums=('2bc44f78ca97764627620a2ca91917acbb4bb050ddfe9a8228de7e1ed8e92541'
             'f6f5c6028f1b90e3fcdc8f34bac1573cd2c8a6ada72578189a28785a68613508')
 
 package() {
-  install -d "$pkgdir"/opt/devkitpro/devkitPPC/bin
-  cp "$srcdir"/powerpc-eabi-cmake "$pkgdir"/opt/devkitpro/devkitPPC/bin/
-  install -d "$pkgdir"/opt/devkitpro/cmake
-  cp "${srcdir}"/devkitPPC.cmake "$pkgdir"/opt/devkitpro/cmake
+  install -d "$pkgdir$DEVKITPRO"/devkitPPC/bin
+  cp "$srcdir"/powerpc-eabi-cmake "$pkgdir$DEVKITPRO"/devkitPPC/bin/
+  install -d "$pkgdir$DEVKITPRO"/cmake
+  cp "${srcdir}"/devkitPPC.cmake "$pkgdir$DEVKITPRO"/cmake
 }

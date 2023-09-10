@@ -23,7 +23,7 @@ groups=("wii-dev" "gamecube-dev")
 
 package() {
 
-  source /opt/devkitpro/ppcvars.sh
+  source "$DEVKITPRO"/ppcvars.sh
 
   cd libgxflux-${_snapshot}
 
