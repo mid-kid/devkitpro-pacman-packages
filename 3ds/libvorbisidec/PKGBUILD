@@ -8,25 +8,27 @@ arch=('any')
 url="http://xiph.org"
 license=('LGPL')
 options=(!strip libtool staticlibs)
-source=("https://downloads.devkitpro.org/packages/sources/libvorbisidec-${pkgver}.tar.xz")
-sha256sums=('6ae33489ed40b54ab4a1cd0cf349e9b3b1d5c68d722485704d951f4bf80c64c6')
+_ver=$pkgver+git20180316
+source=("http://deb.debian.org/debian/pool/main/libv/libvorbisidec/libvorbisidec_$_ver.orig.tar.gz")
+sha256sums=('491b88661544f55b17154407420b5d78d2ac35d12786ee030d0925eb6aec03da')
 makedepends=('3ds-pkg-config' 'dkp-toolchain-vars')
 depends=('3ds-libogg')
 groups=('3ds-portlibs')
 
 build() {
-  cd libvorbisidec-$pkgver
+  cd libvorbisidec-$_ver
 
   source "$DEVKITPRO"/devkitarm.sh
   source "$DEVKITPRO"/3dsvars.sh
 
-  ./configure --prefix="${PORTLIBS_PREFIX}" --host=arm-none-eabi 
+  ACLOCAL_PATH="$PORTLIBS_PREFIX/share/aclocal:$ACLOCAL_PATH" \
+  ./autogen.sh --prefix="${PORTLIBS_PREFIX}" --host=arm-none-eabi
 
   make
 }
 
 package() {
-  cd libvorbisidec-$pkgver
+  cd libvorbisidec-$_ver
 
   source "$DEVKITPRO"/devkitarm.sh
   source "$DEVKITPRO"/3dsvars.sh
