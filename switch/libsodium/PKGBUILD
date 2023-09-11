@@ -10,12 +10,12 @@ url='http://libsodium.org'
 license=('custom')
 options=(!strip libtool staticlibs)
 makedepends=('dkp-toolchain-vars')
-source=("https://download.libsodium.org/libsodium/releases/libsodium-$pkgver-stable.tar.gz")
-sha256sums=('4f3130e5511f94dbd2312312755a50be91cece6ad1c99f9fda9c4634613b227a')
+source=("https://download.libsodium.org/libsodium/releases/libsodium-$pkgver.tar.gz")
+sha256sums=('6f504490b342a4f8a4c4a02fc9b866cbef8622d5df4e5452b46be121e46636c1')
 groups=('switch-portlibs')
 
 build() {
-  cd libsodium-stable
+  cd libsodium-$pkgver
 
   source "$DEVKITPRO"/switchvars.sh
 
@@ -25,7 +25,7 @@ build() {
 }
 
 package() {
-  cd libsodium-stable
+  cd libsodium-$pkgver
 
   source "$DEVKITPRO"/switchvars.sh
 
