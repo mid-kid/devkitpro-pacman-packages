@@ -10,7 +10,7 @@ url="https://repo.or.cz/libgxflux.git"
 license=("GPL2")
 options=("staticlibs" "!strip")
 source=(
-  "libgxflux-${snapshot}.tar.gx::${url}/snapshot/${_snapshot}.tar.gz"
+  "libgxflux-${_snapshot}.tar.gz::${url}/snapshot/${_snapshot}.tar.gz"
   "libgxflux-destdir.patch"
 )
 
