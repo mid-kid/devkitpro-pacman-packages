@@ -18,16 +18,18 @@ build() {
 
   source "$DEVKITPRO"/switchvars.sh
 
+  # AX_PREFIX_CONFIG_H outputs broken headers with non-bash shells
+  CONFIG_SHELL=/bin/bash \
   ./configure --prefix="${PORTLIBS_PREFIX}" --host=aarch64-none-elf \
     --disable-shared --enable-static
 
-  make
+  make SUBDIRS="zzip"
 }
 
 package() {
   cd zziplib-$pkgver
 
-  make DESTDIR="$pkgdir" install
+  make DESTDIR="$pkgdir" SUBDIRS="zzip" install
 
   # Clean out the binaries we don't care about.
   rm -rf "$pkgdir/${PORTLIBS_PREFIX}/bin"
