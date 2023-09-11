@@ -27,7 +27,8 @@ build() {
 
    ./configure --prefix="${PORTLIBS_PREFIX}" --host=aarch64-none-elf --disable-shared --enable-static
 
-    make
+    make -C src libgd.la
+    make -C config
 }
 
 package() {
@@ -35,7 +36,8 @@ package() {
 
     source "$DEVKITPRO"/switchvars.sh
 
-    make DESTDIR="$pkgdir" install
+    make DESTDIR="$pkgdir" -C src install-libLTLIBRARIES
+    make DESTDIR="$pkgdir" -C config install
     install -Dm644 COPYING "$pkgdir/$PORTLIBS_PREFIX/licenses/$pkgname/COPYING"
 
     # These binaries all end up for aarch64, so we shouldn't keep them
