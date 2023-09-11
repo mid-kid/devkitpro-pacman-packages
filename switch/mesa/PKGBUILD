@@ -28,6 +28,9 @@ groups=('switch-portlibs')
 build() {
   cd ${pkgbasename}-${pkgver}-rc3
 
+  sed -e 's@\([^ .]*\).getchildren()@list(\1)@g' \
+      -i src/mapi/glapi/gen/gl{,X}_XML.py
+
   patch -p1 -i ${srcdir}/${pkgname}-${pkgver}-${pkgrel}.patch
   "$DEVKITPRO"/meson-cross.sh switch ../crossfile.txt build -Db_ndebug=true
   ninja -C build
