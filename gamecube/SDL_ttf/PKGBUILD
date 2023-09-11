@@ -29,7 +29,7 @@ build() {
 
   sed '/^noinst_PROGRAMS/d' -i Makefile.in
   ./configure --prefix="${PORTLIBS_PREFIX}" --host=powerpc-eabi \
-    --disable-shared --enable-static
+    --disable-shared --enable-static --without-x
   make
 }
 
