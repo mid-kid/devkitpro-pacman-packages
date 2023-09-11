@@ -9,11 +9,16 @@ arch=('any')
 license=('mit')
 url="http://www.coranac.com/projects/#tonc"
 options=(!strip libtool staticlibs)
-source=(https://github.com/devkitpro/${pkgname}/releases/download/v${pkgver}/${pkgname}-src-${pkgver}.tar.bz2)
-sha256sums=('6a696d19a2f1bb0e456d241c2a438a96c791fa8daf753a87906a14cc7ae8cabd')
+source=(https://github.com/devkitpro/${pkgname}/releases/download/v${pkgver}/${pkgname}-src-${pkgver}.tar.bz2 bool.patch)
+sha256sums=('6a696d19a2f1bb0e456d241c2a438a96c791fa8daf753a87906a14cc7ae8cabd'
+            '9b9c164de892841b1219e4342b651041a6d28c6f8eab401caef497586bb0951b')
 depends=('devkitARM' 'devkitarm-rules' 'devkitarm-crtls')
 
 groups=('gba-dev')
+
+prepare() {
+  patch -p1 -i bool.patch
+}
 
 build() {
 

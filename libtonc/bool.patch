@@ -1,0 +1,11 @@
+--- libtonc-src-1.4.3.orig/include/tonc_types.h
++++ libtonc-src-1.4.3/include/tonc_types.h
+@@ -186,7 +186,7 @@
+ 
+ #ifndef __cplusplus
+ //! Boolean type
+-typedef enum { false, true } bool;
++#include <stdbool.h>
+ #endif
+ 
+ #ifndef BOOL
