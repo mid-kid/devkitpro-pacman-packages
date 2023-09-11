@@ -8,7 +8,7 @@ arch=('any')
 url='http://www.zlib.net'
 license=('zlib')
 options=(!strip libtool staticlibs)
-source=("${url}/zlib-$pkgver.tar.xz")
+source=("${url}/fossils/zlib-$pkgver.tar.gz")
 makedepends=('dkp-toolchain-vars')
 groups=('3ds-portlibs')
 
@@ -46,4 +46,4 @@ package() {
   cd contrib/minizip
   make DESTDIR="$pkgdir" install
 }
-sha256sums=('8a9ba2898e1d0d774eca6ba5b4627a11e5588ba85c8851336eb38de4683050a7')
+sha256sums=('ff0ba4c292013dbc27530b3a81e1f9a813cd39de01ca5e0f8bf355702efa593e')
