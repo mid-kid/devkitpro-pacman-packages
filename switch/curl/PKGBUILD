@@ -29,6 +29,10 @@ build() {
   source "$DEVKITPRO"/switchvars.sh
   LDFLAGS="-specs=${DEVKITPRO}/libnx/switch.specs ${LDFLAGS}"
 
+  # Don't execute the AC_RUN_IFELSE macro without parameters
+  # error: cannot run test program while cross compiling
+  sed -i -e '/AC_REQUIRE(\[AC_RUN_IFELSE\])/d' m4/curl-functions.m4
+
   ./buildconf
 
   ./configure --prefix=$PORTLIBS_PREFIX --host=aarch64-none-elf \
