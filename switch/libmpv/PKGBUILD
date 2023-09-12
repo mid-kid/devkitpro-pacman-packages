@@ -9,9 +9,13 @@ arch=('any')
 url='https://mpv.io/'
 license=('GPL')
 options=(!strip libtool staticlibs)
-source=("${pkgbasename}-${pkgver}.tar.gz::https://github.com/mpv-player/mpv/archive/v${pkgver}.tar.gz" "mpv.patch")
+_ver_waf=2.0.25
+source=("${pkgbasename}-${pkgver}.tar.gz::https://github.com/mpv-player/mpv/archive/v${pkgver}.tar.gz"
+  "https://www.freehackers.org/~tnagy/release/waf-$_ver_waf"
+  "mpv.patch")
 sha256sums=(
   '29abc44f8ebee013bb2f9fe14d80b30db19b534c679056e4851ceadf5a5e8bf6'
+  '21199cd220ccf60434133e1fd2ab8c8e5217c3799199c82722543970dc8e38d5'
   'afd7a950bf93cc417a7b46a6df40870ed6d0f7854feb2d4d64630d9769141a7a'
 )
 makedepends=('switch-pkg-config' 'dkp-toolchain-vars')
@@ -25,10 +29,11 @@ prepare() {
 
 build() {
   cd mpv-$pkgver
+  sed -e '1s/python/python3/' "$srcdir/waf-$_ver_waf" > waf
+  chmod +x waf
 
   source "$DEVKITPRO"/switchvars.sh
 
-  ./bootstrap.py
   export CFLAGS="$CFLAGS -D_POSIX_VERSION=200809L -I$srcdir/mpv-${pkgver}/osdep/switch"
   TARGET=aarch64-none-elf ./waf configure --prefix="${PORTLIBS_PREFIX}" \
     --disable-libmpv-shared --enable-libmpv-static --disable-cplayer \
