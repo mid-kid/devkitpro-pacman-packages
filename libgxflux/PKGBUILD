@@ -19,6 +19,7 @@ sha256sums=('07b7453f7c2eb54aa049498245bea2694feb0a7ae6d7eeb94c3e625d927ac885'
 
 
 makedepends=("dkp-toolchain-vars")
+depends=('libogc')
 groups=("wii-dev" "gamecube-dev")
 
 package() {

@@ -9,14 +9,17 @@ fi
 if [ "$PLATFORM" = "gba" ]; then
   platdesc="Nintendo GBA"
   makedepends=('devkitARM')
+  depends=('libgba')
   groups=('gba-dev')
 elif [ "$PLATFORM" = "ogc" ]; then
   platdesc="Nintendo Wii & Gamecube"
   makedepends=('devkitPPC')
+  depends=('libogc')
   groups=('wii-dev' 'gamecube-dev')
 elif [ "$PLATFORM" = "nds" ]; then
   platdesc="Nintendo NDS"
   makedepends=('devkitARM')
+  depends=('libnds')
   groups=('nds-dev')
 else
   echo "$PLATFORM unsupported"

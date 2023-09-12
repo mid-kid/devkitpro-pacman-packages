@@ -10,7 +10,7 @@ license=(LGPL)
 options=(!strip libtool staticlibs)
 source=("https://github.com/harfbuzz/harfbuzz/releases/download/$pkgver/harfbuzz-$pkgver.tar.xz")
 sha256sums=('fc5560c807eae0efd5f95b5aa4c65800c7a8eed6642008a6b1e7e3ffff7873cc')
-makedepends=('ppc-pkg-config' 'devkitppc-cmake')
+makedepends=('ppc-pkg-config' 'dkp-toolchain-vars' 'devkitppc-cmake')
 depends=('ppc-freetype')
 
 groups=('ppc-portlibs')

@@ -10,6 +10,7 @@ url='http://modplug-xmms.sourceforge.net/'
 license=(public domain)
 options=(!strip libtool staticlibs)
 depends=("3ds-zlib")
+makedepends=('dkp-toolchain-vars')
 groups=('3ds-portlibs')
 source=(
   "https://sourceforge.net/projects/modplug-xmms/files/libmodplug/$pkgver/libmodplug-$pkgver.tar.gz"

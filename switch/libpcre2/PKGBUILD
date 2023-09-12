@@ -9,6 +9,7 @@ url='https://www.pcre.org/'
 license=('BSD')
 options=(!strip libtool staticlibs)
 depends=()
+makedepends=('dkp-toolchain-vars')
 source=("https://github.com/PCRE2Project/pcre2/releases/download/pcre2-${pkgver}/pcre2-${pkgver}.tar.gz"
 )
 groups=('switch-portlibs')

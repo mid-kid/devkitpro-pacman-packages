@@ -9,6 +9,7 @@ arch=('any')
 url="https://libsdl.org"
 license=("LGPL")
 options=(!strip libtool staticlibs)
+depends=('libfat-ogc')
 makedepends=('wii-pkg-config' 'dkp-toolchain-vars')
 source=("${url}/release/SDL-${pkgver}.tar.gz" "SDL-1.2.15.patch" "config.site")
 groups=('wii-portlibs' 'wii-sdl-libs')

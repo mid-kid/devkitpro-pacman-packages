@@ -8,6 +8,7 @@ license=('BSD')
 arch=('any')
 options=(!strip libtool staticlibs)
 depends=('switch-mbedtls' 'switch-zlib')
+makedepends=('dkp-toolchain-vars')
 groups=('switch-portlibs')
 source=("${url}/releases/download/libssh2-${pkgver}/libssh2-${pkgver}.tar.gz" "disable-tests.patch")
 sha256sums=(
