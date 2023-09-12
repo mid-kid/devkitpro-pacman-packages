@@ -11,7 +11,7 @@ url="http://github.com/devkitpro"
 options=(!strip libtool staticlibs)
 source=(${pkgbasename}-${pkgver}.tar.gz::${url}/${pkgbasename}/archive/v${pkgver}/${pkgbasename}-${pkgver}.tar.gz)
 sha256sums=('6bb461dd128b09abbf1a895249dd59c22da98557939930e0483e8b5b36988e10')
-makedepends=('devkitARM' 'orcus')
+makedepends=('devkitARM' 'gp2x-core' 'orcus')
 groups=('gp2x-dev')
 
 

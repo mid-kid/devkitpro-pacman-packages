@@ -17,7 +17,7 @@ sha256sums=(
   '8e45ac8f96ec7791eaf3bb7ee50e9c2100bbbc87b8d0f1d030c5ba8a0288d96b'
   'fadfd93ee3998fa95726f3f2a1f348711abfe43f2394a505da06dbb9ca721f55'
 )
-makedepends=('switch-pkg-config' 'dkp-toolchain-vars')
+makedepends=('dkp-toolchain-vars' 'switch-cmake')
 groups=('switch-portlibs')
 build() {
   cd json-c-$pkgver

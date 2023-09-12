@@ -11,7 +11,7 @@ url="http://github.com/devkitpro/${pkgname}"
 options=(!strip libtool staticlibs)
 source=(${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz)
 sha256sums=('58ae66bb881838b085a1c01da549c5f0f14320fa7efdfc4791878bd7360ddc9a')
-makedepends=('devkitARM')
+makedepends=('devkitARM' 'picasso')
 depends=('libctru' 'citro3d')
 
 groups=('3ds-dev')

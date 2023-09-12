@@ -17,7 +17,7 @@ sha256sums=(
   '8e45ac8f96ec7791eaf3bb7ee50e9c2100bbbc87b8d0f1d030c5ba8a0288d96b'
   'b4936c9cba4e80f3c7c12148d4f511ed3472bd94c7aebb13e0ea9679435d1399'
 )
-makedepends=('3ds-pkg-config' 'dkp-toolchain-vars')
+makedepends=('dkp-toolchain-vars' '3ds-cmake')
 groups=('3ds-portlibs')
 build() {
   cd json-c-$pkgver

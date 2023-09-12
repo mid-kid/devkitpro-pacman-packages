@@ -15,6 +15,7 @@ source=(
 sha256sums=(
   '5ce3d64c931de3599adc3bb2a6ead0fca86c3bb873e5aa10788568cc5e0a0e4f'
 )
+makedepends=('grit')
 depends=('devkitARM' 'devkitarm-rules' 'devkitarm-crtls')
 
 groups=('nds-dev')

@@ -8,7 +8,7 @@ url='https://tls.mbed.org'
 license=('apache')
 options=(!strip libtool staticlibs)
 depends=(switch-zlib)
-makedepends=('switch-pkg-config' 'dkp-toolchain-vars')
+makedepends=('dkp-toolchain-vars' 'switch-cmake')
 source=( "${_realname}-${pkgver}.tar.gz::https://github.com/Mbed-TLS/mbedtls/archive/refs/tags/v${pkgver}.tar.gz"
          "mbedtls-${pkgver}.patch" )
 groups=('switch-portlibs')

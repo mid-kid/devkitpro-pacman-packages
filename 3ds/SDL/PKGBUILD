@@ -8,7 +8,8 @@ arch=('any')
 url="https://libsdl.org"
 license=("LGPL")
 options=(!strip libtool staticlibs)
-makedepends=('3ds-pkg-config' 'dkp-toolchain-vars')
+depends=('citro3d' '3ds-libiconv')
+makedepends=('3ds-pkg-config' 'dkp-toolchain-vars' 'picasso')
 source=("${url}/release/SDL-${pkgver}.tar.gz" "SDL-1.2.15.patch")
 groups=('3ds-portlibs' '3ds-sdl-libs')
 

@@ -9,6 +9,7 @@ url='http://modplug-xmms.sourceforge.net/'
 license=(public domain)
 options=(!strip libtool staticlibs)
 depends=("ppc-zlib")
+makedepends=('dkp-toolchain-vars')
 source=(
   "https://sourceforge.net/projects/modplug-xmms/files/libmodplug/$pkgver/libmodplug-$pkgver.tar.gz"
 )
