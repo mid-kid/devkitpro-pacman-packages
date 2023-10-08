@@ -37,5 +37,5 @@ package() {
 
 }
 
-sha256sums=('e1c0e24eefef6786a652cd29c9122dc869c7bae717638bb05f8382b1cd23476f'
+sha256sums=('2cbbbff19a2ba3a95ab60a7b0874a3ca446becb566105178a022714d3ca0eed1'
             'ee09e9f613b2930caa49ca871a8994baffca8906f4e59e599e9419e5b3285dfd')
